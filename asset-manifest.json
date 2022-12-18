@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lotos/static/css/main.ababef68.css",
-    "main.js": "/lotos/static/js/main.06961c84.js",
+    "main.js": "/lotos/static/js/main.4de34c1d.js",
     "static/js/787.cda612ba.chunk.js": "/lotos/static/js/787.cda612ba.chunk.js",
     "index.html": "/lotos/index.html",
     "main.ababef68.css.map": "/lotos/static/css/main.ababef68.css.map",
-    "main.06961c84.js.map": "/lotos/static/js/main.06961c84.js.map",
+    "main.4de34c1d.js.map": "/lotos/static/js/main.4de34c1d.js.map",
     "787.cda612ba.chunk.js.map": "/lotos/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ababef68.css",
-    "static/js/main.06961c84.js"
+    "static/js/main.4de34c1d.js"
   ]
 }
