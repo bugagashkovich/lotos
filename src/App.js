@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+
+import { useQuery, gql } from "@apollo/client";
+
+import Table from "./components/table";
+import Timer from "./components/timer";
+
+const GET_SESSION = gql`
+  query Session {
+    session {
+      users {
+        id
+        name
+      }
+      activeUserIndex
+      nextTimeStep
+    }
+  }
+`;
 
 function App() {
+  const { loading, error, data } = useQuery(GET_SESSION);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error : {error.message}</p>;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timer
+        timeStamp={data.session.nextTimeStep}
+        users={data.session.users}
+        activeUser={data.session.activeUserIndex}
+      />
+      <Table users={data.session.users} />
     </div>
   );
 }
